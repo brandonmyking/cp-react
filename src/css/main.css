@@ -1,0 +1,322 @@
+body {
+    min-width: 150px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Navbar elements */
+.navbar {
+    justify-content: center;
+}
+
+
+.jumbotron {
+    background: url("https://www.cutterspoint.com/media/dynamic/heroes/94_Cutters%20Point-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 200px 0 0 0;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.coordinates {
+    background-image: url("https://www.cutterspoint.com/media/static/images/coordinates2.png");
+    background-repeat: repeat-y;
+    height: 1vh;
+    width: 100px;
+    left: 5%;
+    position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #141414;
+    display: block;
+    margin: 3px;
+    border: 3px solid transparent;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 19.2px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    border: 3px solid #14141490;
+    color: #14141490;
+}
+
+.hero-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand:hover img {
+    transform: scale(.90);
+    opacity: .75;
+    transition: .3s;
+}
+
+.navbar-brand img {
+    transition: .3s;
+    height: 60px;
+}
+
+.navbar-toggler {
+    background: #141414;
+    color: white;
+    border-radius: 0;
+    height: 50px;
+}
+
+.nav-container {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+.f-row {
+    flex-direction: row;
+}
+
+.nav-mobile {
+    background: white;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.w-700 {
+    width: 700px;
+}
+
+/* Location Slide */
+.location {
+    margin-top: -35px;
+    height: 99px;
+    background: #a42419;   
+}
+
+.location a:hover {
+    background: black;
+    opacity: .70;
+}
+
+.location-text {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30.4px;
+    text-transform: uppercase;
+}
+
+.bg-danger {
+    background: #a42419 !important;
+}
+
+.fa-compass {
+    color: white;
+    margin-right: 25px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Merchandise */
+
+.merch {
+    background: url("https://www.cutterspoint.com/media/static/images/cp-background-blur.jpg") center fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+}
+
+.b-right {
+    border-right: 1px ridge;
+}
+
+.white-link {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 2px #3A3A3A;
+}
+
+.small-span {
+    font-size: 1rem;
+}
+
+.overlay:hover {
+    opacity: 0.70;
+}
+
+
+.max-500 {
+    max-height: 500px;
+}
+
+/* Social */
+.btn-white {
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.btn-social-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.follow {
+    background: #7F6651;
+    padding: 30px 0;
+}
+
+.follow a:hover {
+    opacity: .70;
+    color: white;
+}
+
+/* Content */
+.content {
+    padding: 60px 0;
+    background: url("https://www.cutterspoint.com/media/static/images/cp-watermark.png");
+    background-repeat: no-repeat;
+    left: -100px;
+}
+
+.content-header-text {
+    text-transform: uppercase;
+    font-family: 'gin', serif;
+    margin-bottom: 20px;
+    font-size: 3.4rem;
+    line-height: 3.8rem;
+    font-weight: 400;
+}
+
+.content-text {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin: 5px 0 12px 0;
+    font-style: normal;
+    font-weight: 400;
+}
+/* Footer */
+
+footer {
+    background: #a42419;
+    padding: 40px 0;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.footer-link {
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 100%;
+    border: 1px solid transparent;
+}
+
+.footer-link:hover {
+    border: 1px solid white;
+    color: white;
+    opacity: 0.70;
+}
+
+.small-footer-text {
+    font-size: 0.80rem;
+    color: white;
+}
+
+.hover-link:hover {
+    opacity: 0.70;
+}
+
+.designer {
+    text-transform: uppercase;
+}
+
+.designer:hover {
+    color: white;
+    opacity: 0.70;
+}
+
+/* Mobile Screen */
+@media (max-width: 767px) {
+   
+   /* Nav */
+    .navbar-nav {
+        background: #7F6651;
+    }
+    .nav-item {
+        border-bottom: 1px solid white;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+        display: flex !important;
+        font-size: 16px;
+    }
+    .navbar {
+        background: white;
+    }
+    .nav-container {
+        justify-content: center !important;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+        background: #14141425;
+        border: 3px solid transparent;
+    }
+    .w-700 {
+        width: 100%;
+    }
+    .p-3 {
+        padding: 0 !important;
+    }
+    .navbar-brand img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        margin: 10px auto;
+        
+    }
+    .jumbotron {
+        background-position: center;
+    }
+    .b-right {
+        border-right: none;
+    }
+    .b-bottom {
+        border-bottom: 1px ridge;
+    }
+    /* Footer */
+    .footer-list {
+        flex-direction: column;
+        width: 100%;
+    }
+    .footer-group {
+        justify-content: stretch !important;
+    }
+    .footer-item {
+        width: 100%;
+        display: flex;
+    }
+    .footer-link {
+        width: 100%;
+        border-bottom: 1px solid #6D6D6D;
+    }
+
+}
+
+/* @media (max-width: 549px) {
+    .jumbotron {
+        background-position: center;
+    }
+} */
