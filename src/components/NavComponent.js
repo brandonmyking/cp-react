@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 
 export class NavBar extends Component {
@@ -31,22 +32,22 @@ export class NavBar extends Component {
                         <Collapse className="justify-content-end" isOpen={this.state.isOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
-                                    <NavLink href="#">Home</NavLink>
+                                    <NavLink className="nav-link d-none" to="/home" onClick={this.toggle}>Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Locations</NavLink>
+                                    <NavLink className="nav-link" to="/locations" onClick={this.toggle}>Locations</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Wholesale</NavLink>
+                                    <NavLink className="nav-link" to="/wholesale" onClick={this.toggle}>Wholesale</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Shopping</NavLink>
+                                    <NavLink className="nav-link" to="/shopping" onClick={this.toggle}>Shopping</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">About</NavLink>
+                                    <NavLink className="nav-link" to="/about" onClick={this.toggle}>About</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="d-none" href="#">Contact</NavLink>
+                                    <NavLink className="nav-link d-none" to="/contact" onClick={this.toggle}>Contact</NavLink>
                                 </NavItem>  
                             </Nav>
                     </Collapse>

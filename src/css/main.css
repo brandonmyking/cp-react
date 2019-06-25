@@ -13,7 +13,7 @@ body {
     background: url("https://www.cutterspoint.com/media/dynamic/heroes/94_Cutters%20Point-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 110vh;
     padding: 200px 0 0 0;
     overflow: hidden;
     border-radius: 0;
@@ -22,8 +22,9 @@ body {
 .coordinates {
     background-image: url("https://www.cutterspoint.com/media/static/images/coordinates2.png");
     background-repeat: repeat-y;
-    height: 1vh;
+    height: 100vh;
     width: 100px;
+    top: -200px;
     left: 5%;
     position: relative;
 }
@@ -31,8 +32,8 @@ body {
 .navbar-dark .navbar-nav .nav-link {
     color: #141414;
     display: block;
+    padding: 8px;
     margin: 3px;
-    border: 3px solid transparent;
     font-size: 20px;
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
@@ -42,11 +43,23 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
     border: 3px solid #14141490;
     color: #14141490;
+    margin: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    background: #141414;
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link.active:hover {
+    opacity: 0.7;
+    border: 3px solid #14141490;
+    margin: 0;
 }
 
 .hero-logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .navbar-brand:hover img {
@@ -72,6 +85,7 @@ body {
     padding-right: 0;
     padding-bottom: 0;
     margin: 0;
+    height: 100px;
     max-width: 100%;
 }
 
@@ -249,6 +263,10 @@ footer {
     opacity: 0.70;
 }
 
+.shopping-item:hover ~ .edit-button {
+    display: flex;
+}
+
 /* Mobile Screen */
 @media (max-width: 767px) {
    
@@ -263,6 +281,7 @@ footer {
         color: white;
         display: flex !important;
         font-size: 16px;
+        margin: 0;
     }
     .navbar {
         background: white;
@@ -271,8 +290,20 @@ footer {
         justify-content: center !important;
     }
     .navbar-dark .navbar-nav .nav-link:hover {
-        background: #14141425;
-        border: 3px solid transparent;
+        background: #666;
+        color: white;
+        opacity: 0.7;
+        border: none;
+    }
+    .navbar-dark .navbar-nav .nav-link.active {
+        background: #dbd9d1;
+        color: #141414;
+    }
+    .navbar-dark .navbar-nav .nav-link.active:hover {
+        border: none;
+        background: #dbd9d1;
+        color: #141414;
+        opacity: 1;
     }
     .w-700 {
         width: 100%;
