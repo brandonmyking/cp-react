@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col, Label } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 const divStyle = {
@@ -47,7 +47,7 @@ class RenderItems extends React.Component {
         const shoppingContent = this.props.items.map((item, i) => {
             return(
                 <div key={i} className="col-12 col-md-6">
-                    <img className="img-fluid" style={{height: '200px'}} src={item.image} />
+                    <img className="img-fluid" style={{height: '200px'}} src={item.image} alt={item.title} />
                     <hr/>
                     <h4>{item.title}</h4>
                     <h6>${item.price}</h6>
@@ -68,7 +68,7 @@ class RenderItems extends React.Component {
                                 <h4>Preview</h4>
                                 {this.state.imgs && [...this.state.imgs].map((file) => {
                                     return(
-                                        <img className="img-fluid" src={URL.createObjectURL(file)} />
+                                        <img className="img-fluid" src={URL.createObjectURL(file)} alt="preview" />
                                     );
                                 } )}
                                 <hr/>
@@ -142,6 +142,7 @@ class AddItems extends React.Component {
     handleSubmit(values) {
         this.setState({imgs: null});
         alert(JSON.stringify(values));
+        this.props.addItem(values);
     }
 
     render(){
@@ -157,11 +158,11 @@ class AddItems extends React.Component {
                                 <h4>Preview</h4>
                                 {this.state.imgs && [...this.state.imgs].map((file) => {
                                     return(
-                                        <img className="img-fluid" src={URL.createObjectURL(file)} />
+                                        <img className="img-fluid" src={URL.createObjectURL(file)} alt="preview" />
                                     );
                                 } )}
                                 <hr/>
-                                <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                                <LocalForm onSubmit={values => this.handleSubmit(values)}>
                                     <Row className="form-group">
                                         <Label htmlFor="image" md={2}>
                                             Item Image
@@ -204,8 +205,8 @@ export const Shopping = (props) => {
 
         return(
             <div className="d-flex justify-content-center" style={{position: 'relative', top: '120px', marginBottom: '150px'}}>
-                <AddItems items={props.items} />
-                <RenderItems items={props.items} addComment={props.addComment} />
+                <AddItems items={props.items} addItem={props.addItem} />
+                <RenderItems items={props.items} addItem={props.addItem} />
             </div>
         );
 }

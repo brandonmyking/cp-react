@@ -1,11 +1,10 @@
 import * as ActionTypes from './ActionTypes';
 
-export const addItem = (itemId, image, title, price) => ({
+export const addItem = (values) => ({
     type: ActionTypes.ADD_ITEM,
     payload: {
-        itemId: itemId,
-        image: image,
-        title: title,
-        price: price
+        image: '/photos/' + values.image[0].name,
+        title: values.title,
+        price: values.price
     }
 });

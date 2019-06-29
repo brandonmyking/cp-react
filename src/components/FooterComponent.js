@@ -7,7 +7,7 @@ export const Footer = () => {
                 <div className="row">
                     <div className="col-12 col-md-3">
                         <a className="hover-link" href="#">
-                            <img className="img-fluid" src="https://www.cutterspoint.com/media/static/images/cp-small-white.png"/>
+                            <img className="img-fluid" src="https://www.cutterspoint.com/media/static/images/cp-small-white.png" alt="footer"/>
                         </a>
 
                     </div>

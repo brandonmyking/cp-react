@@ -7,7 +7,7 @@ export const Content = () => {
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <h1 className="content-header-text">Extraordinary Coffee & Community for Over 20 Years</h1><br/>
-                        <img className="img-fluid" src="https://www.cutterspoint.com/media/static/images/cp-map-legend.png" />
+                        <img className="img-fluid" src="https://www.cutterspoint.com/media/static/images/cp-map-legend.png" alt="content" />
                     </div>
                     <div className="col-12 col-md-6">
                         <br/>
