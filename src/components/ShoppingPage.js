@@ -7,6 +7,8 @@ const divStyle = {
     textAlign: 'center'
 }
 
+const required = (val) => val && val.length;
+
 class RenderItems extends React.Component {
     constructor(props){
         super(props);
@@ -33,8 +35,20 @@ class RenderItems extends React.Component {
     }
 
     handleSubmit(values) {
+        console.log(this.state.selectedItem);
+        var selected = this.state.selectedItem;
         this.setState({imgs: null});
-        alert(JSON.stringify(values));
+        if (values.image) { 
+            selected.image = '/photos/' + values.image[0].name;
+            console.log(this.state.selectedItem);
+        }
+        if (values.title) { 
+            selected.title = values.title;
+        }
+        if (values.price) { 
+            selected.price = values.price;
+        } 
+        console.log(this.state.selectedItem);
     }
 
     onChange(event) {
@@ -140,8 +154,8 @@ class AddItems extends React.Component {
     }
 
     handleSubmit(values) {
+        this.toggleModal();
         this.setState({imgs: null});
-        alert(JSON.stringify(values));
         this.props.addItem(values);
     }
 
@@ -168,24 +182,36 @@ class AddItems extends React.Component {
                                             Item Image
                                         </Label>
                                         <Col md={10}>
-                                            <Control.file model=".image" name="image" accept="image/*" className="form-control" onChange={this.onChange} />
+                                            <Control.file model=".image" name="image" accept="image/*" className="form-control" onChange={this.onChange}
+                                            validators={{required}} required />
+                                             <Errors
+                                                className="text-danger"
+                                                model=".image"
+                                                show="touched"
+                                                messages={{
+                                                    required: 'Required',
+                                                }}
+                                            />
                                         </Col>
                                     </Row>
                                     <Row className="form-group">
                                         <Label htmlFor="title" md={2}>Item Title</Label>
                                         <Col md={10}>
-                                            <Control.text model=".title" name="title" id="title" className="form-control" placeholder="Item Name" />
+                                            <Control.text model=".title" name="title" id="title" className="form-control" placeholder="Item Name"
+                                            validators={{required}} required />
                                         </Col>
                                     </Row>
                                     <Row className="form-group">
                                         <Label htmlFor="price" md={2}>Item Price</Label>
                                         <Col md={10}>
-                                            <Control.text model=".price" name="price" id="price" className="form-control" placeholder="Item Price" />
+                                            <Control.text model=".price" name="price" id="price" className="form-control" placeholder="Item Price"
+                                            validators={{required}} required />
                                         </Col>
                                     </Row>
                                     <Row className="form-group">
                                         <Col>
-                                            <Button type="submit" color="primary" onClick={this.toggleModal}>Add Item</Button>
+                                            <Button type="submit" color="primary">Add Item</Button>
+                                            <Button className="float-right" type="button" color="secondary" onClick={this.toggleModal}>Cancel</Button>
                                         </Col>
                                     </Row>
                                 </LocalForm>

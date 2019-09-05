@@ -1,12 +1,9 @@
-import { createStore, combineReducers} from 'redux';
-import { Shopping } from './shopping';
+import { createStore, compose} from 'redux';
+import { rootReducer } from './root';
+
 
 export const ConfigureStore = () => {
-    const store = createStore(
-        combineReducers({
-            shopping: Shopping 
-        })
-    );
+    const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
     return store;
 }

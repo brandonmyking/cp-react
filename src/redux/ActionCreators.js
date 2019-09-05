@@ -8,3 +8,12 @@ export const addItem = (values) => ({
         price: values.price
     }
 });
+
+export const editItem = (values) => ({
+    type: ActionTypes.EDIT_ITEM,
+    payload: {
+        image: '/photos/' + values.image[0].name,
+        title: values.title,
+        price: values.price
+    }
+});

@@ -5,7 +5,7 @@ import { Home } from './HomePage';
 import { Shopping } from './ShoppingPage';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addItem } from '../redux/ActionCreators';
+import { addItem, editItem } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return{
@@ -14,7 +14,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addItem: (itemId, image, title, price) => dispatch(addItem(itemId, image, title, price))
+    addItem: (values) => dispatch(addItem(values)),
+    editItem: (values) => dispatch(editItem(values))
 })
 
 class Main extends Component {
