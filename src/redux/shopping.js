@@ -9,6 +9,15 @@ export const shopping = (state = SHOPPING, action) => {
             item.id = state.length;
             return state.concat(item);
 
+        case ActionTypes.EDIT_ITEM:
+            var item = action.payload;
+            state[item.id] = {
+                image: item.image,
+                title: item.title,
+                price: item.price
+            };
+            return state;
+
         default:
             return state;
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 export class NavBar extends Component {
@@ -22,8 +22,10 @@ export class NavBar extends Component {
         return(
             <Navbar className="nav-container fixed-top" dark expand="md">
                 <div className="container nav-container w-700">
-                    <NavbarBrand href="/">
+                    <NavbarBrand tag="span">
+                        <Link to="/">
                             <img className="img-fluid" src="https://www.cutterspoint.com/media/static/images/logo-footer.png" alt="Cutters Point Coffee Co."/>
+                        </Link>    
                     </NavbarBrand>
                             
                         <NavbarToggler className="col-12" onClick={this.toggle}>

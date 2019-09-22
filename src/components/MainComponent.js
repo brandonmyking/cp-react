@@ -23,7 +23,7 @@ class Main extends Component {
 
         const ShoppingPage = () => {
             return(
-                <Shopping items={this.props.shopping} addItem={this.props.addItem} />
+                <Shopping items={this.props.shopping} addItem={this.props.addItem} editItem={this.props.editItem} />
             );
         }
 

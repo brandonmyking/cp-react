@@ -35,20 +35,21 @@ class RenderItems extends React.Component {
     }
 
     handleSubmit(values) {
-        console.log(this.state.selectedItem);
         var selected = this.state.selectedItem;
+        // Toggles modal closed
+        this.toggleModal();
+        // Need to move this state to the store?
         this.setState({imgs: null});
-        if (values.image) { 
-            selected.image = '/photos/' + values.image[0].name;
-            console.log(this.state.selectedItem);
+        if(values.image) {
+            selected.image = 'photos/' + values.image[0].name;
         }
-        if (values.title) { 
+        if(values.title) {
             selected.title = values.title;
         }
-        if (values.price) { 
+        if(values.price) {
             selected.price = values.price;
-        } 
-        console.log(this.state.selectedItem);
+        }
+        this.props.editItem(selected);
     }
 
     onChange(event) {
@@ -109,7 +110,7 @@ class RenderItems extends React.Component {
                                     </Row>
                                     <Row className="form-group">
                                         <Col>
-                                            <Button type="submit" color="primary" onClick={this.toggleModal}>Submit Changes</Button>
+                                            <Button type="submit" color="primary">Submit Changes</Button>
                                         </Col>
                                     </Row>
                                 </LocalForm>
@@ -232,7 +233,7 @@ export const Shopping = (props) => {
         return(
             <div className="d-flex justify-content-center" style={{position: 'relative', top: '120px', marginBottom: '150px'}}>
                 <AddItems items={props.items} addItem={props.addItem} />
-                <RenderItems items={props.items} addItem={props.addItem} />
+                <RenderItems items={props.items} addItem={props.addItem} editItem={props.editItem} />
             </div>
         );
 }
